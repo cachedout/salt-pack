@@ -1,10 +1,10 @@
 # Salt Package Builder (salt-pack)
 
-Salt-pack is an open-source package builder for most commonly used Linux platforms, for example: Redhat/CentOS and Debian/Ubuntu families, utilizing SaltStack states and execution modules to build Salt and a specified set of dependencies, from which a platform specific repository can be built.
+Salt-pack is an open-source package builder for most commonly used Linux platforms. It utilizes SaltStack states and execution modules to build Salt and a specified set of dependencies from which a platform specific repository can be built.
 
-Salt-pack relies on SaltStack’s Master-Minion functionality to build the desired packages and repository, and can install the required tools to build the packages and repository for that platform.
+Salt-pack relies on SaltStack’s Master-Minion functionality to build the desired packages and repository and can install the required tools to build the packages and repository for that platform.
 
-The Salt state file which drives the building process is found in salt/states/pkgbuild.py, which provides a typical salt virtual interface to perform the build process.  The virtual interface is satisfied by execution modules for the appropriate supported platform, for example :
+The Salt state file which drives the building process is found in salt/states/pkgbuild.py and provides a typical salt virtual interface to perform the build process.  The virtual interface is satisfied by execution modules for the appropriate supported platform, for example:
 
 Redhat / CentOS
 : salt/modules/rpmbuild.py
@@ -32,7 +32,7 @@ where:
 
 | File / Directory | Description                                                                                                                                                     |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| init.sls         | Initialisation SSL file describing what is to be built. Note that this can include files obtained over the Internet.                                            |
+| init.sls         | Initialisation SLS file describing what is to be built. Note that this can include files obtained over the Internet.                                            |
 | spec             | Directory containing file[s] describing the building of the package for this platform OS, e.g. rpm spec file for Redhat, dsc file or tarball for Debian/Ubuntu. |
 | source           | various source files to be used in building the package, for example:  salt-2015.8.5.tar.gz.                                                                    |
 
